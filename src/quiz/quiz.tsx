@@ -20,7 +20,7 @@ const Quiz: React.FC = () => {
   return (
     <>
       <Container>
-        Quiz - {quiz.difficulty}
+        Quiz - {quiz.difficulty.category} - {quiz.difficulty.difficulty}
         <button onClick={backHandler}>Back</button>
       </Container>
     </>
