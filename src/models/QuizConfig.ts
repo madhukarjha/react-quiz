@@ -1,4 +1,4 @@
-export default interface QuizConfig{
+export default interface IQuizConfig{
     category: string,
     difficulty: string
 }

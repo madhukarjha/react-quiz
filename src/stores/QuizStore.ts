@@ -1,9 +1,9 @@
 import { makeAutoObservable } from "mobx";
-import QuizConfig from "../models/QuizConfig";
+import IQuizConfig from "../models/QuizConfig";
 
 const QuizStore = () => makeAutoObservable({
     level: {},
-    setDifficulty(_difficulty: {}) {
+    setDifficulty(_difficulty: IQuizConfig) {
         this.level = _difficulty;
     },
     get difficulty() {

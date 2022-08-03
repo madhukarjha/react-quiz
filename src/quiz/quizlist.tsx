@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Styled from "styled-components";
 import { useStore } from "../stores";
-import QuizConfig from "../models/QuizConfig";
+import IQuizConfig from "../models/QuizConfig";
 
 const QuizList: React.FC = () => {
   const Container = Styled.div`
@@ -18,7 +18,7 @@ const QuizList: React.FC = () => {
         flex: 50%;
     }
     `;
-  const [selectedOption, setSelectedOption] = useState({});
+  const [selectedOption, setSelectedOption] = useState<IQuizConfig>({category: 'any', difficulty: 'any' });
   const navigate = useNavigate();
   const { quiz } = useStore();
   const openQuizHandler = () => {
@@ -33,7 +33,7 @@ const QuizList: React.FC = () => {
       <div>
         <label>Difficulty:</label><br />
         <select name="difficulty" id="difficulty" onChange={handleChange}>
-          <option value="Any">Any difficulty</option>
+          <option value="any">Any difficulty</option>
           <option value="Easy">Easy</option>
           <option value="Medium">Medium</option>
           <option value="Hard">Hard</option>
